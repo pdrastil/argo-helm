@@ -1588,6 +1588,33 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Add appHardResyncPeriod option for application controller"
+    apiVersion: v2
+    appVersion: v2.4.11
+    created: "2022-08-26T18:07:39.57167303Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.1
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 065e309ea4ec4b8e2df29ecd90eea7109222653d57598b97bd83024fbb6d1035
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.3.6/argo-cd-5.3.6.tgz
+    version: 5.3.6
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Helm chart maintainers standardized to argoproj"
     apiVersion: v2
     appVersion: v2.4.11
@@ -7448,6 +7475,23 @@ entries:
   argo-rollouts:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: initContainer option to controller pod, updated secrets roles"
+    apiVersion: v2
+    appVersion: v1.2.2
+    created: "2022-08-26T18:07:39.71435958Z"
+    description: A Helm chart for Argo Rollouts
+    digest: 90622c45ffbafa77319bc4e255f02cf33ab8ecff67dbeea8eb6223922a25feaf
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-rollouts/assets/logo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-rollouts
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-rollouts-2.20.0/argo-rollouts-2.20.0.tgz
+    version: 2.20.0
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Helm chart maintainers standardized to argoproj"
     apiVersion: v2
     appVersion: v1.2.2
@@ -9240,4 +9284,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-08-26T09:04:54.859762569Z"
+generated: "2022-08-26T18:07:39.718392976Z"
