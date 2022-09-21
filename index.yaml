@@ -1588,6 +1588,35 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: New configuration section `configs.params` for command line parameters"
+        - "[Deprecated]: Command line arguments in `args` sections"
+        - "[Deprecated]: Options `logFormat` and `logLevel` for core components"
+    apiVersion: v2
+    appVersion: v2.4.12
+    created: "2022-09-21T11:49:41.854434084Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 861d366038e364515ecb3c4e287c0eeabbdf3f6fe360b7db5ed8645ea16c4504
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.5.0/argo-cd-5.5.0.tgz
+    version: 5.5.0
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Cleanup of config files to keep them DRY"
     apiVersion: v2
     appVersion: v2.4.12
@@ -8245,6 +8274,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Move crds folder into templates folder and add conditional flags for install and keep"
+    apiVersion: v2
+    appVersion: v3.4.0
+    created: "2022-09-21T11:49:41.969617059Z"
+    description: A Helm chart for Argo Workflows
+    digest: f5c7819300ab592d038fcaca40ac4dabb98560b0e1ca9459f491b3274031df42
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.19.0/argo-workflows-0.19.0.tgz
+    version: 0.19.0
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Upgrade ArgoWorkflows to v3.4.0"
         - "[Fixed]: Remove unsupported attributes on metricsConfig and telemetryConfig, from workflow-controller-configmap"
     apiVersion: v2
@@ -9544,4 +9593,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-21T07:33:19.568119356Z"
+generated: "2022-09-21T11:49:41.972684248Z"
