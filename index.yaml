@@ -8274,6 +8274,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Remove unsupported values from SSO configuration"
+    apiVersion: v2
+    appVersion: v3.4.0
+    created: "2022-09-21T14:36:07.761701815Z"
+    description: A Helm chart for Argo Workflows
+    digest: 532f996e7e23858b0ffddc8e9c7e415cae48027f469194c9c849b6357a4409bd
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.19.1/argo-workflows-0.19.1.tgz
+    version: 0.19.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Move crds folder into templates folder and add conditional flags for install and keep"
     apiVersion: v2
     appVersion: v3.4.0
@@ -9593,4 +9613,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-21T11:49:41.972684248Z"
+generated: "2022-09-21T14:36:07.765507156Z"
