@@ -1588,6 +1588,33 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Cleanup of config files to keep them DRY"
+    apiVersion: v2
+    appVersion: v2.4.12
+    created: "2022-09-21T07:33:19.565033469Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: fb8819474b0485d51bfe5540d80b0b6b0054614f27488a1e79a7e2fe3713adf1
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.4.8/argo-cd-5.4.8.tgz
+    version: 5.4.8
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Add privateKey spec handling from CertificatePrivateKey"
     apiVersion: v2
     appVersion: v2.4.12
@@ -9517,4 +9544,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-20T12:13:33.387947287Z"
+generated: "2022-09-21T07:33:19.568119356Z"
