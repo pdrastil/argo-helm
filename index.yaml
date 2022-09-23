@@ -1588,6 +1588,33 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Clarified documentation around CRD upgrades"
+    apiVersion: v2
+    appVersion: v2.4.12
+    created: "2022-09-23T13:00:27.076514163Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 43ce5db61e65dc11987a7f052621b8496148542f0da810a1506811a9dd86b5fc
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.5.4/argo-cd-5.5.4.tgz
+    version: 5.5.4
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Node selector for repoServer was not rendered correctly"
     apiVersion: v2
     appVersion: v2.4.12
@@ -9694,4 +9721,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-22T08:53:30.577895256Z"
+generated: "2022-09-23T13:00:27.080456801Z"
