@@ -1588,6 +1588,33 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Add missing templating for some service labels"
+    apiVersion: v2
+    appVersion: v2.4.12
+    created: "2022-09-25T17:07:38.345997202Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: ffc79bc1ffe1446b0ea2aa70607f6e6f6f186171ecee970ea2bb848b4453e3ca
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.5.5/argo-cd-5.5.5.tgz
+    version: 5.5.5
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Clarified documentation around CRD upgrades"
     apiVersion: v2
     appVersion: v2.4.12
@@ -8382,6 +8409,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Set only used values on SSO configuration"
+    apiVersion: v2
+    appVersion: v3.4.0
+    created: "2022-09-25T17:07:38.456275804Z"
+    description: A Helm chart for Argo Workflows
+    digest: 6141924c3979804dc97e809a4fae58f139ef2a134444fa8147380013607c55b7
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.19.2/argo-workflows-0.19.2.tgz
+    version: 0.19.2
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Remove unsupported values from SSO configuration"
     apiVersion: v2
     appVersion: v3.4.0
@@ -9721,4 +9768,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-23T13:00:27.080456801Z"
+generated: "2022-09-25T17:07:38.45980822Z"
