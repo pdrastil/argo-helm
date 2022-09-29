@@ -7169,6 +7169,29 @@ entries:
   argo-events:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Upgrade Argo events controller to v1.7.3"
+    apiVersion: v2
+    appVersion: v1.7.3
+    created: "2022-09-29T20:10:36.648631879Z"
+    description: A Helm chart for Argo Events, the event-driven workflow automation
+      framework
+    digest: 36d06df3a44f55f83d7aeb2e2847f6b13731ac9c0fc409238e19d090c5fe85eb
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-events/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-events
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-events
+    sources:
+    - https://github.com/argoproj/argo-events
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-events-2.0.6/argo-events-2.0.6.tgz
+    version: 2.0.6
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Upgrade Argo events controller to v1.7.2"
     apiVersion: v2
     appVersion: v1.7.2
@@ -7906,6 +7929,28 @@ entries:
     - argo-lite-0.1.0.tgz
     version: 0.1.0
   argo-rollouts:
+  - annotations:
+      artifacthub.io/changes: |
+        - "[Changed]: Upgrade ArgoRollouts to v1.3.0"
+    apiVersion: v2
+    appVersion: v1.3.0
+    created: "2022-09-29T20:10:37.053929877Z"
+    description: A Helm chart for Argo Rollouts
+    digest: 19cd9a23b98246ddef59d033d0b354b4afb7b6dcb3e2264c55169a5f17e977f6
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-rollouts/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-rollouts
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-rollouts
+    sources:
+    - https://github.com/argoproj/argo-rollouts
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-rollouts-2.21.0/argo-rollouts-2.21.0.tgz
+    version: 2.21.0
   - annotations:
       artifacthub.io/changes: |
         - "[Added]: initContainer option to controller pod, updated secrets roles"
@@ -9858,4 +9903,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-28T22:24:20.505325235Z"
+generated: "2022-09-29T20:10:37.057481773Z"
