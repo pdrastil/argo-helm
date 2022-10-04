@@ -1588,6 +1588,36 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: v5.5.0 Upgrade guide heading in README"
+    apiVersion: v2
+    appVersion: v2.4.12
+    created: "2022-10-04T18:59:18.736675735Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: ae8e1a3db2f0d07f80649d4f178b5509bbd3885dd0431c3a056cc6f03778f6c7
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.5.7/argo-cd-5.5.7.tgz
+    version: 5.5.7
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Source code section inside chart README"
     apiVersion: v2
     appVersion: v2.4.12
@@ -7931,6 +7961,28 @@ entries:
   argo-rollouts:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Upgrade ArgoRollouts to v1.3.1"
+    apiVersion: v2
+    appVersion: v1.3.1
+    created: "2022-10-04T18:59:18.855670502Z"
+    description: A Helm chart for Argo Rollouts
+    digest: 0a8621666ec93b527b20b4b60e4d810072e2f00b23e6deb4126eeb756220a2da
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-rollouts/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-rollouts
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-rollouts
+    sources:
+    - https://github.com/argoproj/argo-rollouts
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-rollouts-2.21.1/argo-rollouts-2.21.1.tgz
+    version: 2.21.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Upgrade ArgoRollouts to v1.3.0"
     apiVersion: v2
     appVersion: v1.3.0
@@ -8482,6 +8534,26 @@ entries:
     - argo-rollouts-0.1.0.tgz
     version: 0.1.0
   argo-workflows:
+  - annotations:
+      artifacthub.io/changes: |
+        - "[Changed]: Upgrade ArgoWorkflows to v3.4.1"
+    apiVersion: v2
+    appVersion: v3.4.1
+    created: "2022-10-04T18:59:18.987882243Z"
+    description: A Helm chart for Argo Workflows
+    digest: f932ad215167b374f31da217237f3468a27a0630c7d4bfaa20571bc76c6d9ff1
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.20.1/argo-workflows-0.20.1.tgz
+    version: 0.20.1
   - annotations:
       artifacthub.io/changes: |
         - "[Added]: Additional manifests to deploy within the chart"
@@ -9903,4 +9975,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-09-29T20:10:37.057481773Z"
+generated: "2022-10-04T18:59:18.991344994Z"
