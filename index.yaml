@@ -1588,6 +1588,36 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Updated example PrometheusRule expression for missing apps"
+    apiVersion: v2
+    appVersion: v2.4.14
+    created: "2022-10-07T09:31:58.656241797Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: f83cb5e17ff8540a1793c5d9d8d9d7e683aac97b14e1b5e9ea1205d30d7b7aae
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.5.11/argo-cd-5.5.11.tgz
+    version: 5.5.11
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update to app version 2.4.14"
     apiVersion: v2
     appVersion: v2.4.14
@@ -10065,4 +10095,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-06T21:51:05.213628908Z"
+generated: "2022-10-07T09:31:58.660374749Z"
