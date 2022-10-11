@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: API version override for PDB and Google Cloud."
+        - "[Changed]: Moved all API versions in dedicated helper."
+    apiVersion: v2
+    appVersion: v2.4.14
+    created: "2022-10-11T13:54:08.953066763Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 05ed6477a7bc00718c37c21736e42eae0dd77b6fd19bb52909205e5eeff4510b
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.5.20/argo-cd-5.5.20.tgz
+    version: 5.5.20
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Documented defaults for imagePullSecrets"
     apiVersion: v2
     appVersion: v2.4.14
@@ -10308,4 +10339,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-10T20:47:06.171670029Z"
+generated: "2022-10-11T13:54:08.957049566Z"
