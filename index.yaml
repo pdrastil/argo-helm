@@ -9827,6 +9827,27 @@ entries:
   argocd-apps:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Add ApplicationSets"
+    apiVersion: v2
+    created: "2022-10-12T08:32:52.035755268Z"
+    description: A Helm chart for managing additional Argo CD Applications and Projects
+    digest: 0273e47c410cc624362d17d4b06e2fec56ba0dff9887686edb5cc466baf885c8
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argocd-apps-0.0.2/argocd-apps-0.0.2.tgz
+    version: 0.0.2
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Add additional Applications and Projects"
     apiVersion: v2
     created: "2022-08-24T16:01:36.949001635Z"
@@ -10423,4 +10444,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-12T08:04:51.832756328Z"
+generated: "2022-10-12T08:32:52.038892707Z"
