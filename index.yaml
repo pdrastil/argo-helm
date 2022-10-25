@@ -9235,6 +9235,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Enable to set different imagePullPolicy for mainContainer and executor"
+    apiVersion: v2
+    appVersion: v3.4.2
+    created: "2022-10-25T06:29:40.056033841Z"
+    description: A Helm chart for Argo Workflows
+    digest: 3dd3e0347df6634fd7af0c34d9961d4e001d528cb660d7d2c2e6c26b7293d8be
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.20.4/argo-workflows-0.20.4.tgz
+    version: 0.20.4
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update ArgoWorkflows to v3.4.2"
     apiVersion: v2
     appVersion: v3.4.2
@@ -10779,4 +10799,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-24T21:48:59.167804425Z"
+generated: "2022-10-25T06:29:40.060351259Z"
