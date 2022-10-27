@@ -9420,6 +9420,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Removed invalid rbac block from configmap"
+    apiVersion: v2
+    appVersion: v3.4.2
+    created: "2022-10-27T08:07:52.994481939Z"
+    description: A Helm chart for Argo Workflows
+    digest: 017a09d790f7f745aeeaf7441f54b39e40f4b9a751be9bcbb24381e1651e9936
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.20.5/argo-workflows-0.20.5.tgz
+    version: 0.20.5
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Enable to set different imagePullPolicy for mainContainer and executor"
     apiVersion: v2
     appVersion: v3.4.2
@@ -10984,4 +11004,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-26T13:20:20.066649896Z"
+generated: "2022-10-27T08:07:52.995676795Z"
