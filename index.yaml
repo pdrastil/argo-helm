@@ -1588,6 +1588,36 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Removed]: AWS volume from server component"
+    apiVersion: v2
+    appVersion: v2.5.0
+    created: "2022-10-28T09:04:32.42486852Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 67194d055bc7bab62c9291adf6ea7439fb41e7e0a4e8af525d1fcde1ed871c31
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.8.4/argo-cd-5.8.4.tgz
+    version: 5.8.4
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Fixed documentation for applicationSet HA examples"
     apiVersion: v2
     appVersion: v2.5.0
@@ -11034,4 +11064,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-27T12:21:22.843360248Z"
+generated: "2022-10-28T09:04:32.426971486Z"
