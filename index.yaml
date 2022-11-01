@@ -9792,6 +9792,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Update ArgoWorkflows to v3.4.3"
+    apiVersion: v2
+    appVersion: v3.4.3
+    created: "2022-11-01T09:50:54.179603301Z"
+    description: A Helm chart for Argo Workflows
+    digest: 1f019a7dd00a1e5811762e7ae94cb950944ee8131ac2e724f780367d4238c4ae
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.20.6/argo-workflows-0.20.6.tgz
+    version: 0.20.6
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Removed invalid rbac block from configmap"
     apiVersion: v2
     appVersion: v3.4.2
@@ -11376,4 +11396,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-01T01:15:32.41050388Z"
+generated: "2022-11-01T09:50:54.181233426Z"
