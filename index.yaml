@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Security]: Upgrade image tag to include fixes for CVE-2022-3786 and CVE-2022-3602"
+    apiVersion: v2
+    appVersion: v2.5.1
+    created: "2022-11-02T11:11:44.358800358Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.2
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 4dc77e22684acc68d30f41fe04d59dfcc6e21044b9ffaeae90dacbdef984134e
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.13.1/argo-cd-5.13.1.tgz
+    version: 5.13.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Option global.revisionHistoryLimit for deployments"
         - "[Changed]: Forced Slack bot deployment strategy to Recreate"
     apiVersion: v2
@@ -11459,4 +11490,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-01T19:28:03.57333328Z"
+generated: "2022-11-02T11:11:44.359893673Z"
