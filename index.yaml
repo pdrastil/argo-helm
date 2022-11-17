@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Document imporatant changes in changelog"
+    apiVersion: v2
+    appVersion: v2.5.2
+    created: "2022-11-17T17:26:10.184187788Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.3
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 7054379badcf7bfbeef4073c93b02346bd47cfd0c4d612a6cbcdbb275e43e1c1
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.13.9/argo-cd-5.13.9.tgz
+    version: 5.13.9
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Cluster credentials JSON config must be always converted to the string"
     apiVersion: v2
     appVersion: v2.5.2
@@ -11747,4 +11778,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-15T17:07:07.593492758Z"
+generated: "2022-11-17T17:26:10.187056335Z"
