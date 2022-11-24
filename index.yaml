@@ -10202,6 +10202,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: allow users to optionally whitelist secrets"
+    apiVersion: v2
+    appVersion: v3.4.3
+    created: "2022-11-24T12:09:47.379852637Z"
+    description: A Helm chart for Argo Workflows
+    digest: f12697119c3cd1679c9c368ac0e23e51c5c1a3e4ff687450e13e3fc163e12a3f
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.20.9/argo-workflows-0.20.9.tgz
+    version: 0.20.9
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: add missing attribute for sso"
     apiVersion: v2
     appVersion: v3.4.3
@@ -11846,4 +11866,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-24T12:02:58.573144883Z"
+generated: "2022-11-24T12:09:47.38122456Z"
