@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Ability to deploy argocd-repo-server-server-tls secret and configure Strict TLS for Repo Server"
+    apiVersion: v2
+    appVersion: v2.5.3
+    created: "2022-11-30T09:47:00.696268739Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.3
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: a38444810d152ec173b61da444db89d6b8bcd12c3afcb639959968ded42da206
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.15.0/argo-cd-5.15.0.tgz
+    version: 5.15.0
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update to app version 2.5.3"
     apiVersion: v2
     appVersion: v2.5.3
@@ -11948,4 +11979,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-29T14:25:32.782094578Z"
+generated: "2022-11-30T09:47:00.697500769Z"
