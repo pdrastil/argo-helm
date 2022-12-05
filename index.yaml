@@ -1588,6 +1588,39 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Set aggregate roles only for using resources"
+        - "[Added]: Add argocdextensions to aggregate roles"
+        - "[Fixed]: Fix typo of notification.bots.slack.image in values"
+    apiVersion: v2
+    appVersion: v2.5.3
+    created: "2022-12-05T08:45:39.643161309Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.3
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 5e5422610166155b5cfdca01103148a64952c532526bfa5a1e0a9eb9f0f0e2d0
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.16.1/argo-cd-5.16.1.tgz
+    version: 5.16.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Ability to annotate Deployment and Statefulset objects for all components"
     apiVersion: v2
     appVersion: v2.5.3
@@ -10326,6 +10359,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Missing Artifact GC permissions"
+    apiVersion: v2
+    appVersion: v3.4.4
+    created: "2022-12-05T08:45:39.782130566Z"
+    description: A Helm chart for Argo Workflows
+    digest: 4d8cafdd0a2fe31b20f88dc39128c5a94a226d81e8cbf42da1b9dff042e5a6ac
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.0/argo-workflows-0.22.0.tgz
+    version: 0.22.0
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update Argo Workflows to v3.4.4"
     apiVersion: v2
     appVersion: v3.4.4
@@ -11392,6 +11445,27 @@ entries:
   argocd-apps:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Projects templates"
+    apiVersion: v2
+    created: "2022-12-05T08:45:39.902104957Z"
+    description: A Helm chart for managing additional Argo CD Applications and Projects
+    digest: 95140f263dc4f6a7f3f251accc5a5829a65bc93ff42ff6d56faf35d5c51c40c1
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argocd-apps-0.0.4/argocd-apps-0.0.4.tgz
+    version: 0.0.4
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Add Extensions"
     apiVersion: v2
     created: "2022-10-13T22:07:44.227536867Z"
@@ -12030,4 +12104,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-01T08:12:50.417710514Z"
+generated: "2022-12-05T08:45:39.903488854Z"
