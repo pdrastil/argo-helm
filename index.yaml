@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Prevent could not parse 0 warning"
+    apiVersion: v2
+    appVersion: v2.5.4
+    created: "2022-12-14T17:02:16.023806426Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.3
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 53b5defd6e44ca9770c2b1bcdf1aea22e5553e54721b687b446b8047a82005d0
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.16.4/argo-cd-5.16.4.tgz
+    version: 5.16.4
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update ArgoCD to v2.5.4"
     apiVersion: v2
     appVersion: v2.5.4
@@ -9053,6 +9084,31 @@ entries:
   argo-events:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: avoid app.kubernetes.io/version kubernetes label from exceeding maximum length (63)
+        - "[Fixed]: generated value for app.kubernetes.io/version label is now valid even when defining a controller/webhook .image.tag with a SHA digest"
+        - "[Fixed]: webhook.image.tag value now overrides the tag in the webhook deployment"
+    apiVersion: v2
+    appVersion: v1.7.3
+    created: "2022-12-14T17:02:16.241938039Z"
+    description: A Helm chart for Argo Events, the event-driven workflow automation
+      framework
+    digest: b9d8ff9be4b212014f1066166fecbb98730823639fb6b259519e909404e0b0f0
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-events/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-events
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-events
+    sources:
+    - https://github.com/argoproj/argo-events
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-events-2.0.7/argo-events-2.0.7.tgz
+    version: 2.0.7
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Upgrade Argo events controller to v1.7.3"
     apiVersion: v2
     appVersion: v1.7.3
@@ -10390,6 +10446,27 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: avoid app.kubernetes.io/version kubernetes label from exceeding maximum length (63)
+        - "[Fixed]: generated value for app.kubernetes.io/version label is now valid even when defining a controller/server/executor.image.tag with a SHA digest"
+    apiVersion: v2
+    appVersion: v3.4.4
+    created: "2022-12-14T17:02:16.465383824Z"
+    description: A Helm chart for Argo Workflows
+    digest: c5c5eee5826a12fd069d7ffa2816887b495e71bdfc70f3bf986b6d7c47a534c0
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.1/argo-workflows-0.22.1.tgz
+    version: 0.22.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Missing Artifact GC permissions"
     apiVersion: v2
     appVersion: v3.4.4
@@ -11476,6 +11553,27 @@ entries:
   argocd-apps:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Support sourceNamespaces for AppProject"
+    apiVersion: v2
+    created: "2022-12-14T17:02:16.673318494Z"
+    description: A Helm chart for managing additional Argo CD Applications and Projects
+    digest: 93062e2d6e26ee5b5e49aff40450b87c006ee16dccbcacfa80133668f5103d60
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argocd-apps-0.0.5/argocd-apps-0.0.5.tgz
+    version: 0.0.5
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Projects templates"
     apiVersion: v2
     created: "2022-12-05T08:45:39.902104957Z"
@@ -12135,4 +12233,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-07T11:20:45.965038325Z"
+generated: "2022-12-14T17:02:16.674993485Z"
