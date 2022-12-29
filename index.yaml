@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Removed]: API override for PDB"
+    apiVersion: v2
+    appVersion: v2.5.5
+    created: "2022-12-29T15:51:13.380604482Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 5d93ca2491ea313f767da8d6ce82fe268dffb314e880b460bd9a55991557fcb3
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.16.12/argo-cd-5.16.12.tgz
+    version: 5.16.12
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Added HostAliases to ApplicationSet Deployment"
     apiVersion: v2
     appVersion: v2.5.5
@@ -12413,4 +12444,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-29T12:38:39.930103879Z"
+generated: "2022-12-29T15:51:13.381730465Z"
