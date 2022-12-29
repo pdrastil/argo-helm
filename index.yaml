@@ -9239,6 +9239,29 @@ entries:
   argo-events:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Added missing NATS version in values.yaml"
+    apiVersion: v2
+    appVersion: v1.7.4
+    created: "2022-12-29T19:29:35.718958323Z"
+    description: A Helm chart for Argo Events, the event-driven workflow automation
+      framework
+    digest: 252206f7e420c8802c0434d58fe0120a67c5375ec7cea624747c496a078cba23
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-events/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-events
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-events
+    sources:
+    - https://github.com/argoproj/argo-events
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-events-2.0.11/argo-events-2.0.11.tgz
+    version: 2.0.11
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Upgrade Argo events controller to v1.7.4"
     apiVersion: v2
     appVersion: v1.7.4
@@ -10645,6 +10668,26 @@ entries:
     - argo-rollouts-0.1.0.tgz
     version: 0.1.0
   argo-workflows:
+  - annotations:
+      artifacthub.io/changes: |
+        - "[Removed]: legacy API versions for PDBs"
+    apiVersion: v2
+    appVersion: v3.4.4
+    created: "2022-12-29T19:29:35.927411357Z"
+    description: A Helm chart for Argo Workflows
+    digest: 1715aff7fc1f57cb6f7e109a9ba7a36cddc135f6c476a8f9e9780155eb2c6490
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.5/argo-workflows-0.22.5.tgz
+    version: 0.22.5
   - annotations:
       artifacthub.io/changes: |
         - "[Added]: Changelog link on README"
@@ -12475,4 +12518,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-29T16:27:29.834813375Z"
+generated: "2022-12-29T19:29:35.929018259Z"
