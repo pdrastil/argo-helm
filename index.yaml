@@ -1588,6 +1588,39 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Docs]: Added sample how to provide K8s credentials plugin"
+        - "[Docs]: Added sample how to provide Argo config management plugin"
+        - "[Docs]: Removed samples that injects tools into incorrect controllers"
+    apiVersion: v2
+    appVersion: v2.5.5
+    created: "2023-01-04T23:41:48.024796879Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 617adf22f8d0000c6a47e5f51d2b0dac910ccc1029c3288accb6789ca1a22aa3
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.16.14/argo-cd-5.16.14.tgz
+    version: 5.16.14
+  - annotations:
+      artifacthub.io/changes: |
         - "[Removed]: Legacy API versions for Ingresses"
     apiVersion: v2
     appVersion: v2.5.5
@@ -10670,6 +10703,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Support podGCDeleteDelayDuration and podGCGracePeriodSeconds"
+    apiVersion: v2
+    appVersion: v3.4.4
+    created: "2023-01-04T23:41:48.231978721Z"
+    description: A Helm chart for Argo Workflows
+    digest: 8ea3cf6e9f8b394264d0c5d7bea9efe395df6f165d3881ffb0c92dc85f380ecc
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.7/argo-workflows-0.22.7.tgz
+    version: 0.22.7
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Suuport envFrom for main container"
     apiVersion: v2
     appVersion: v3.4.4
@@ -12538,4 +12591,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-30T11:39:01.114644722Z"
+generated: "2023-01-04T23:41:48.234773162Z"
