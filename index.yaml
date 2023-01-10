@@ -10703,6 +10703,26 @@ entries:
   argo-workflows:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Helm helper function to allow image registry to be absent"
+    apiVersion: v2
+    appVersion: v3.4.4
+    created: "2023-01-10T00:32:08.269992945Z"
+    description: A Helm chart for Argo Workflows
+    digest: fcc7394cd2330eda0d3bbeb879ca86e0573fb104dc04451a79f3d0595b5467b4
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.8/argo-workflows-0.22.8.tgz
+    version: 0.22.8
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Support podGCDeleteDelayDuration and podGCGracePeriodSeconds"
     apiVersion: v2
     appVersion: v3.4.4
@@ -12591,4 +12611,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-04T23:41:48.234773162Z"
+generated: "2023-01-10T00:32:08.270964846Z"
