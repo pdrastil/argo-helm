@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Changed]: Update Argo CD to v2.5.6"
+    apiVersion: v2
+    appVersion: v2.5.6
+    created: "2023-01-11T14:09:41.285476184Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: b5e659222ac8a72c005518d324836cf3908f0d27818774b9aa1a4b588b662bd5
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.17.1/argo-cd-5.17.1.tgz
+    version: 5.17.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Support for extraContainers and initContainers for applicationSet and notifications"
         - "[Added]: Support for use of Helm templates for extraContainers and initContainers"
         - "[Docs]: Added notes about custom Helm template support"
@@ -12678,4 +12709,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-11T10:08:01.596686014Z"
+generated: "2023-01-11T14:09:41.286802029Z"
