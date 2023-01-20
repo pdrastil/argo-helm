@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: README information about 5.12.0 TLS changes"
+    apiVersion: v2
+    appVersion: v2.5.7
+    created: "2023-01-20T19:13:25.143388492Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 08bc56e3085fb8877f2bbea231a97630bf088425ee50fc52cc1a147cb489f15d
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.18.1/argo-cd-5.18.1.tgz
+    version: 5.18.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update Argo CD extensions to v0.2.1"
     apiVersion: v2
     appVersion: v2.5.7
@@ -10288,6 +10319,28 @@ entries:
   argo-rollouts:
   - annotations:
       artifacthub.io/changes: |
+        - "[Added]: Flags to toggle provider-specific RBAC rules in Role and ClusterRole"
+    apiVersion: v2
+    appVersion: v1.4.0
+    created: "2023-01-20T19:13:25.304181609Z"
+    description: A Helm chart for Argo Rollouts
+    digest: e9bf7a6be60aa4606b5968f5afb24090fce711c706b2bfcc41cf943f3a011d54
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-rollouts/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-rollouts
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-rollouts
+    sources:
+    - https://github.com/argoproj/argo-rollouts
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-rollouts-2.22.1/argo-rollouts-2.22.1.tgz
+    version: 2.22.1
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: avoid app.kubernetes.io/version kubernetes label from exceeding maximum length (63)"
         - "[Fixed]: generated value for app.kubernetes.io/version label is now valid even when defining a controller.image.tag with a SHA digest"
     apiVersion: v2
@@ -12816,4 +12869,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-19T11:32:16.016259799Z"
+generated: "2023-01-20T19:13:25.306003508Z"
