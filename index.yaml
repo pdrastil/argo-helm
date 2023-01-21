@@ -1588,6 +1588,37 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - "[Fixed]: Fixed invalid port on redis service"
+    apiVersion: v2
+    appVersion: v2.5.7
+    created: "2023-01-21T19:13:42.316629415Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 78614fa76cc4533fd4c7c12fa90df87d3c8e67826262ef8015479e3ac158382d
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.19.3/argo-cd-5.19.3.tgz
+    version: 5.19.3
+  - annotations:
+      artifacthub.io/changes: |
         - "[Fixed]: Added missing options for automounting service tokens for applicationset and notifications controllers"
     apiVersion: v2
     appVersion: v2.5.7
@@ -12956,4 +12987,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-21T12:20:05.19270018Z"
+generated: "2023-01-21T19:13:42.320208932Z"
