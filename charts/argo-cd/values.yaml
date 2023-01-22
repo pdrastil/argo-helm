@@ -20,9 +20,8 @@ createAggregateRoles: false
 ## Used when you manage applications in the same cluster where Argo CD runs
 createClusterRoles: true
 
-openshift:
-  # -- enables using arbitrary uid for argo repo server
-  enabled: false
+# -- Enable RedHat OpenShift cluster capabilities
+openshift: false
 
 ## Custom resource configuration
 crds:

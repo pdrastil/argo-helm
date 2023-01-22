@@ -1,4 +1,4 @@
-{{- if .Values.server.route.enabled -}}
+{{- if and .Values.openshift .Values.server.route.enabled -}}
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -6,12 +6,12 @@ metadata:
   namespace: {{ .Release.Namespace | quote }}
   labels:
     {{- include "argo-cd.labels" (dict "context" . "component" .Values.server.name "name" .Values.server.name) | nindent 4 }}
-{{- with .Values.server.route.annotations }}
+  {{- with .Values.server.route.annotations }}
   annotations:
     {{- range $key, $value := . }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
-{{- end }}
+  {{- end }}
 spec:
   host: {{ .Values.server.route.hostname | default .Values.global.domain | quote }}
   to:
