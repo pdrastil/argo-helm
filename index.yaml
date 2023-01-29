@@ -9840,6 +9840,30 @@ entries:
   argo-events:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: Align changelog structure to show changelogs on Artifact Hub
+    apiVersion: v2
+    appVersion: v1.7.5
+    created: "2023-01-29T19:21:09.069522428Z"
+    description: A Helm chart for Argo Events, the event-driven workflow automation
+      framework
+    digest: 3523c2bf0a69c65dea2e3dd9e7243ed34df9d0260a3327066d19b9008e10d933
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-events/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-events
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-events
+    sources:
+    - https://github.com/argoproj/argo-events
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-events-2.1.2/argo-events-2.1.2.tgz
+    version: 2.1.2
+  - annotations:
+      artifacthub.io/changes: |
         - "[Changed]: Update Argo Events to v1.7.5"
     apiVersion: v2
     appVersion: v1.7.5
@@ -10742,6 +10766,29 @@ entries:
   argo-rollouts:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: Align changelog structure to show changelogs on Artifact Hub
+    apiVersion: v2
+    appVersion: v1.4.0
+    created: "2023-01-29T19:21:09.240966185Z"
+    description: A Helm chart for Argo Rollouts
+    digest: 20680b964e4e9b80d200aef16ea6dd6405ae16997c4f3708a05258b652ac79d6
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-rollouts/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-rollouts
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-rollouts
+    sources:
+    - https://github.com/argoproj/argo-rollouts
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-rollouts-2.22.2/argo-rollouts-2.22.2.tgz
+    version: 2.22.2
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Flags to toggle provider-specific RBAC rules in Role and ClusterRole"
     apiVersion: v2
     appVersion: v1.4.0
@@ -11382,6 +11429,27 @@ entries:
     - argo-rollouts-0.1.0.tgz
     version: 0.1.0
   argo-workflows:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: Align changelog structure to show changelogs on Artifact Hub
+    apiVersion: v2
+    appVersion: v3.4.4
+    created: "2023-01-29T19:21:09.496478423Z"
+    description: A Helm chart for Argo Workflows
+    digest: 918366befff98672a3bd310afa551dc7a9817e5fcb9faac1dfa5c127fbe387a2
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.9/argo-workflows-0.22.9.tgz
+    version: 0.22.9
   - annotations:
       artifacthub.io/changes: |
         - "[Added]: Helm helper function to allow image registry to be absent"
@@ -12591,6 +12659,28 @@ entries:
   argocd-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: Align changelog structure to show changelogs on Artifact Hub
+    apiVersion: v2
+    created: "2023-01-29T19:21:09.665721983Z"
+    description: A Helm chart for managing additional Argo CD Applications and Projects
+    digest: 09f7e4906a58888de1002650fbd7a46542d5bff075a7057ce52b32ef5aa12881
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argocd-apps-0.0.7/argocd-apps-0.0.7.tgz
+    version: 0.0.7
+  - annotations:
+      artifacthub.io/changes: |
         - "[Added]: Changelog link on README"
     apiVersion: v2
     created: "2022-12-27T12:16:22.83782344Z"
@@ -12716,6 +12806,30 @@ entries:
     - https://github.com/pdrastil/argo-helm/releases/download/argocd-apps-0.0.1/argocd-apps-0.0.1.tgz
     version: 0.0.1
   argocd-image-updater:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: Align changelog structure to show changelogs on Artifact Hub
+    apiVersion: v2
+    appVersion: v0.12.0
+    created: "2023-01-29T19:21:09.831284749Z"
+    description: A Helm chart for Argo CD Image Updater, a tool to automatically update
+      the container images of Kubernetes workloads which are managed by Argo CD
+    digest: df16d93b37d470be67a27550174367a5ebbfab057db324458a8af5c94758e05d
+    home: https://github.com/argoproj-labs/argocd-image-updater
+    icon: https://argocd-image-updater.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argocd-image-updater
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argocd-image-updater-0.8.3/argocd-image-updater-0.8.3.tgz
+    version: 0.8.3
   - annotations:
       artifacthub.io/changes: |
         - "[Changed]: avoid app.kubernetes.io/version kubernetes label from exceeding maximum length (63)"
@@ -13315,4 +13429,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-29T15:37:53.600417396Z"
+generated: "2023-01-29T19:21:09.832774947Z"
