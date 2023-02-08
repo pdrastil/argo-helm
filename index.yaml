@@ -1588,6 +1588,38 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: Sync latest ApplicationSet CRD
+    apiVersion: v2
+    appVersion: v2.6.0
+    created: "2023-02-08T08:24:13.710835425Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 911b17bb3944b7740b1c7e3ab28b2755ecb26ce2b60572c4d325b336af1ccedc
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.20.1/argo-cd-5.20.1.tgz
+    version: 5.20.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: Upgrade Argo CD to 2.6.0
         - kind: deprecated
@@ -13572,4 +13604,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-07T15:14:56.0256585Z"
+generated: "2023-02-08T08:24:13.712565242Z"
