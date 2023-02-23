@@ -1588,6 +1588,38 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - kind: removed
+          description: Removed notification bot that is no longer supported
+    apiVersion: v2
+    appVersion: v2.6.2
+    created: "2023-02-23T17:00:58.743037225Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: cdd527610d1f3a34a929ac50225f6f6763b4c93e29114b44a5606918bbefca09
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.23.0/argo-cd-5.23.0.tgz
+    version: 5.23.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: Global affinity configuration
     apiVersion: v2
@@ -10130,6 +10162,30 @@ entries:
   argo-events:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: Upgrade Argo Events to v1.7.6
+    apiVersion: v2
+    appVersion: v1.7.6
+    created: "2023-02-23T17:00:58.920491656Z"
+    description: A Helm chart for Argo Events, the event-driven workflow automation
+      framework
+    digest: 9b6365eea9a61f65295976d14300d4fe1dc75194f17b5c488868c34188590878
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argoproj.github.io/argo-events/assets/logo.png
+    keywords:
+    - argoproj
+    - argo-events
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-events
+    sources:
+    - https://github.com/argoproj/argo-events
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-events-2.1.3/argo-events-2.1.3.tgz
+    version: 2.1.3
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: Align changelog structure to show changelogs on Artifact Hub
     apiVersion: v2
@@ -13807,4 +13863,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-17T16:43:27.77172349Z"
+generated: "2023-02-23T17:00:58.922328129Z"
