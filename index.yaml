@@ -11778,6 +11778,27 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Update documentation to explain why CRDs are in templates folder
+    apiVersion: v2
+    appVersion: v3.4.5
+    created: "2023-02-23T18:12:49.600514932Z"
+    description: A Helm chart for Argo Workflows
+    digest: 8ca9436dbe8f7853daae60a31810a96c4ea454c73ce0fceda4614fb23e28a89f
+    home: https://github.com/argoproj/argo-helm
+    icon: https://raw.githubusercontent.com/argoproj/argo-workflows/master/docs/assets/argo.png
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-workflows
+    type: application
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-workflows-0.22.12/argo-workflows-0.22.12.tgz
+    version: 0.22.12
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: Cleaned RBAC permissions for subresources (pods/log, pods/exec).
     apiVersion: v2
     appVersion: v3.4.5
@@ -13863,4 +13884,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-23T17:00:58.922328129Z"
+generated: "2023-02-23T18:12:49.60146558Z"
