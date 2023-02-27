@@ -1588,6 +1588,38 @@ entries:
   argo-cd:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: Fixed typos in values.yaml and README.md
+    apiVersion: v2
+    appVersion: v2.6.2
+    created: "2023-02-27T18:47:03.655437291Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.22.4
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: e392b29ade4b0fd9508c8f7fcb6a2909ede6c30ffb21614c249b7d749678aacd
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://github.com/pdrastil/argo-helm/releases/download/argo-cd-5.23.2/argo-cd-5.23.2.tgz
+    version: 5.23.2
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: Missing hostAliases for notification controller and redis
     apiVersion: v2
@@ -13943,4 +13975,4 @@ entries:
     urls:
     - argocd-notifications-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-25T14:52:05.587289323Z"
+generated: "2023-02-27T18:47:03.657014212Z"
