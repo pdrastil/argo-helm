@@ -44,6 +44,9 @@ global:
   ## Used for ingresses, certificates, SSO, notifications, etc.
   domain: argocd.example.com
 
+  # -- Runtime class name for all components
+  runtimeClassName: ""
+
   # -- Common labels for the all resources
   additionalLabels: {}
     # app: argo-cd
@@ -225,6 +228,25 @@ configs:
     #     - profile
     #     - email
 
+    # Extension Configuration
+    ## Ref: https://argo-cd.readthedocs.io/en/latest/developer-guide/extensions/proxy-extensions/
+    # extension.config: |
+    #   extensions:
+    #   - name: httpbin
+    #     backend:
+    #       connectionTimeout: 2s
+    #       keepAlive: 15s
+    #       idleConnectionTimeout: 60s
+    #       maxIdleConnections: 30
+    #       services:
+    #       - url: http://httpbin.org
+    #         headers:
+    #         - name: some-header
+    #           value: '$some.argocd.secret.key'
+    #         cluster:
+    #           name: some-cluster
+    #           server: https://some-cluster
+
   # Argo CD configuration parameters
   ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cmd-params-cm.yaml
   params:
@@ -263,6 +285,8 @@ configs:
     server.disable.auth: false
     # -- Enable GZIP compression
     server.enable.gzip: true
+    # -- Enable proxy extension feature. (proxy extension is in Alpha phase)
+    server.enable.proxy.extension: false
     # -- Set X-Frame-Options header in HTTP responses to value. To disable, set to "".
     server.x.frame.options: sameorigin
 
@@ -275,6 +299,10 @@ configs:
     applicationsetcontroller.policy: sync
     # -- Enables use of the Progressive Syncs capability
     applicationsetcontroller.enable.progressive.syncs: false
+    # -- A list of glob patterns specifying where to look for ApplicationSet resources. (e.g. `"argocd,argocd-appsets-*"`)
+    # @default -- `""` (default is only the ns where the controller is installed)
+    ## For more information: https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Appset-Any-Namespace/
+    applicationsetcontroller.namespaces: ""
 
     # -- Enables [Applications in any namespace]
     ## List of additional namespaces where applications may be created in and reconciled from.
@@ -619,6 +647,10 @@ controller:
   ## like round-robin, then the shards will be well-balanced.
   dynamicClusterDistribution: false
 
+  # -- Runtime class name for the application controller
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
+
   # -- Application controller heartbeat time
   # Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/dynamic-cluster-distribution/#working-of-dynamic-distribution
   heartbeatTime: 10
@@ -919,6 +951,10 @@ dex:
   # -- Additional command line arguments to pass to the Dex server
   extraArgs: []
 
+  # -- Runtime class name for Dex
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
+
   metrics:
     # -- Deploy metrics service
     enabled: false
@@ -1212,6 +1248,10 @@ redis:
   enabled: true
   # -- Redis name
   name: redis
+
+  # -- Runtime class name for redis
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
 
   ## Redis Pod Disruption Budget
   ## Ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
@@ -1685,6 +1725,9 @@ redisSecretInit:
   # @default -- `""` (defaults to global.priorityClassName)
   priorityClassName: ""
 
+  # -- Assign custom [affinity] rules to the Redis secret-init Job
+  affinity: {}
+
   # -- Node selector to be added to the Redis secret-init Job
   # @default -- `{}` (defaults to global.nodeSelector)
   nodeSelector: {}
@@ -1700,6 +1743,10 @@ server:
 
   # -- The number of server pods to run
   replicas: 1
+
+  # -- Runtime class name for the Argo CD server
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
 
   ## Argo CD server Horizontal Pod Autoscaler
   autoscaling:
@@ -2151,53 +2198,140 @@ server:
     # -- Automount API credentials for the Service Account
     automountServiceAccountToken: true
 
-  # Argo CD server Gateway API HTTPRoute configuration
+  # Argo CD server Gateway API configuration
   # NOTE: Alpha feature, gRPC & TLS pass-through will not work
-  gatewayAPI:
-    # -- Enable a Gateway API resources for the Argo CD server
-    enabled: true
-    # -- Additional route labels
+  gateway:
+    # -- enable a gateway resource for ArgoCD
+    ## Note: you can already have an existing Gateway and just wanted to add a route and backend policy to that Gateway, let false in that case
+    enabled: false
+    # -- Name of the gateway
+    # @default -- `'{{ include "argo-cd.server.fullname" . }}'` (See [values.yaml])
+    name: '{{ include "argo-cd.server.fullname" . }}'
+    # -- Name of the namespace gateway
+    # @default -- `'{{ include  "argo-cd.namespace" . }}'` (See [values.yaml])
+    namespace: '{{ include  "argo-cd.namespace" . }}'
+    # -- Specific implementation for gateway controller. Only `None` and `gke` are supported.
+    ## With `None`, the gateway is supposed to already exist and no specific object will be created
+    ## Additional configuration might be required in related configuration sections for `gke`
+    controller: None
+    # -- Additional gateway labels
     labels: {}
-    # -- Additional route annotations
+    # -- Additional gateway annotations
     annotations: {}
+    #  networking.gke.io/certmap: "CERTIFICATE_MAP_NAME"
 
-    # -- Defines which Gateway will implement the resource
-    gateway: ""
+    # -- Getaway class name
+    # @default -- `""` (See [values.yaml])
+    ## Example: gatewayClassName: gke-l7-global-external-managed
+    gatewayClassName: ""
+    # -- Gateway listeners
+    # @default -- Listen on http.
+    ## Notes: Enabled https required ssl configuration depending on your k8s environment
+    listeners:
+      - name: http
+        protocol: HTTP
+        port: 80
+        allowedRoutes:
+          namespaces:
+            from: Same
+      # - name: https
+      #   protocol: HTTPS
+      #   port: 443
+      #   allowedRoutes:
+      #     namespaces:
+      #       from: Same
+    gke:
+      GCPGatewayPolicy:
+        # -- Additional gateway policy labels
+        # @default -- `{}` (See [values.yaml])
+        labels: {}
+        # -- Additional gateway policy annotations
+        # @default -- `{}` (See [values.yaml])
+        annotations: {}
+        spec:
+          # -- Default spec for GCPGatewayPolicy
+          # @default -- `{}` (See [values.yaml])
+          default: {}
+      GCPBackendPolicy:
+        # -- Additional backend policy labels
+        # @default -- `{}` (See [values.yaml])
+        labels: {}
+        # -- Additional backend policy annotations
+        # @default -- `{}` (See [values.yaml])
+        annotations: {}
+        spec:
+          # -- Default spec for GCPBackendPolicy
+          # @default -- `{}` (See [values.yaml])
+          default: {}
+      HealthCheckPolicy:
+        # -- Additional heath check policy labels
+        # @default -- `{}` (See [values.yaml])
+        labels: {}
+        # -- Additional heath check policy annotations
+        # @default -- `{}` (See [values.yaml])
+        annotations: {}
+        spec:
+          # -- Default spec for GCP HealthCheckPolicy
+          # @default -- Logs enabled and Heath check on argo server service (See [values.yaml])
+          default:
+            logConfig:
+              enabled: true
+            config:
+              type: HTTP
+              httpHealthCheck:
+                port: 8080
+                requestPath: "/"
+    # Argo CD server Gateway API HTTPRoute configuration
+    # NOTE: Alpha feature, gRPC & TLS pass-through will not work
+    httpRoute:
+      # -- Enable a Gateway HTTP route resources for the Argo CD server
+      # @default -- Same value than server.gateway.enabled (See [values.yaml])
+      enabled: "{{ .Values.server.gateway.enabled }}"
+      # -- Additional route labels
+      # @default -- `{}` (See [values.yaml])
+      labels: {}
+      # -- Additional route annotations
+      # @default -- `{}` (See [values.yaml])
+      annotations: {}
 
-    # -- Defines which Gateway section will implement the resource
-    gatewaySection: ""
+      # -- Defines which Gateway section will implement the resource
+      # @default -- `""` (See [values.yaml])
+      gatewaySection: ""
 
-    # -- Argo CD server hostname
-    # @default -- `""` (defaults to global.domain)
-    hostname: ""
+      # -- Argo CD server hostname
+      # @default -- `""` (defaults to global.domain)
+      hostname: ""
 
-    # -- The path to Argo CD server
-    path: /
+      # -- The path to Argo CD server
+      # @default -- `/` (See [values.yaml])
+      path: /
 
-    # -- HTTP reoute path type. Either 'Exact' or `PathPrefix`
-    pathType: PathPrefix
+      # -- HTTP reoute path type. Either 'Exact' or `PathPrefix`
+      # @default -- `PathPrefix` (See [values.yaml])
+      pathType: PathPrefix
 
-    # -- The list of additional hostnames to be covered by API Gateway record
-    extraHosts: []
+      # -- The list of additional hostnames to be covered by API Gateway record
+      # @default -- `[]` (See [values.yaml])
+      extraHosts: []
 
-    # -- Additional API Gateway paths
-    # @default -- `[]` (See [values.yaml])
-    ## Note: Supports use of custom Helm templates
-    extraPaths: []
-      # - type: PathPrefix
-      #   value: /*
+      # -- Additional API Gateway paths
+      # @default -- `[]` (See [values.yaml])
+      ## Note: Supports use of custom Helm templates
+      extraPaths: []
+        # - type: PathPrefix
+        #   value: /*
 
-    # -- Additional routing rules
-    # @default -- `[]` (See [values.yaml])
-    ## Note: Supports use of custom Helm templates
-    extraRules: []
-      # - matches:
-      #   - path:
-      #       type: PathPrefix
-      #       value: /
-      #     backendRefs:
-      #       - name: '{{ include "argo-cd.server.fullname" . }}'
-      #         port: '{{ .Values.server.service.servicePortHttpName }}'
+      # -- Additional routing rules
+      # @default -- `[]` (See [values.yaml])
+      ## Note: Supports use of custom Helm templates
+      extraRules: []
+        # - matches:
+        #   - path:
+        #       type: PathPrefix
+        #       value: /
+        #     backendRefs:
+        #       - name: '{{ include "argo-cd.server.fullname" . }}'
+        #         port: '{{ .Values.server.service.servicePortHttpName }}'
 
 
   # Argo CD server ingress configuration
@@ -2412,6 +2546,10 @@ repoServer:
 
   # -- The number of repo server pods to run
   replicas: 1
+
+  # -- Runtime class name for the repo server
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
 
   ## Repo server Horizontal Pod Autoscaler
   autoscaling:
@@ -2801,6 +2939,10 @@ applicationSet:
   # -- The number of ApplicationSet controller pods to run
   replicas: 1
 
+  # -- Runtime class name for the ApplicationSet controller
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
+
   ## ApplicationSet controller Pod Disruption Budget
   ## Ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
   pdb:
@@ -3167,6 +3309,10 @@ notifications:
   # -- Argo CD dashboard url; used in place of {{.context.argocdUrl}} in templates
   # @default -- `""` (defaults to https://`global.domain`)
   argocdUrl: ""
+
+  # -- Runtime class name for the notifications controller
+  # @default -- `""` (defaults to global.runtimeClassName)
+  runtimeClassName: ""
 
   ## Notifications controller Pod Disruption Budget
   ## Ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
